@@ -1,0 +1,9 @@
+main\util\WebConfig.class
+main\controller\Service.class
+main\entities\User.class
+main\model\register\UserData.class
+main\util\WebInit.class
+main\util\PersistenceJpaConfig.class
+main\services\UserService.class
+main\services\UserServiceImpl.class
+main\repositories\UserRepository.class
