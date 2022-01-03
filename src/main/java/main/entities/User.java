@@ -1,4 +1,7 @@
 package main.entities;
+
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.Column;
 
 import javax.persistence.Entity;
@@ -9,26 +12,35 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="users")
+@Table(name = "users")
 public class User {
 
+
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name="user")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "id")
+    private int id;
+
+    @Column(name = "username")
     private String user;
 
-    @Column(name="password")
+    @Column(name = "password")
     private String password;
 
-    public User() {
 
+    protected User() {
+
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getUser() {
         return user;
     }
 
-    public void setId(String user) {
+    public void setUser(String user) {
         this.user = user;
     }
 
@@ -36,13 +48,13 @@ public class User {
         return password;
     }
 
-    public void setFirstName(String password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
     @Override
     public String toString() {
-        return "User [user=" + user + ", password=" + password  + "]";
+        return "User [user=" + user + ", password=" + password + "]";
     }
 }
 

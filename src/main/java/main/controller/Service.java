@@ -1,7 +1,9 @@
 package main.controller;
 
 
-import main.model.register.UserData;
+import main.entities.User;
+import main.repositories.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
+import java.util.List;
 
 
 @CrossOrigin(origins = "http://localhost:4200")
@@ -16,31 +19,28 @@ import java.sql.SQLException;
 @Controller
 public class Service {
 
-//    @Autowired
-//    private UsersBase usersBase;
-//    @Autowired
-//    private UserData userData;
+    @Autowired
+    private UserRepository userRepository;
 
     @PostMapping("/register")
-    private ResponseEntity key(@RequestBody UserData users) throws SQLException {
-        System.out.println(users.get_ID());
-//        User user = new User(users.get_ID(), users.get_password());
-        //usersBase.createUser();
-//        usersBase.insertUser(users);
+    private ResponseEntity key(@RequestBody User  user) {
+
+        userRepository.save(user);
         return new ResponseEntity<>(true, HttpStatus.OK);
     }
 
     @GetMapping(value = "/login")
-    public void getUser(@RequestHeader HttpHeaders headers, @RequestParam String user , String password) throws SQLException {
+    private List getUser(@RequestHeader HttpHeaders headers, @RequestParam String user, String password){
 
         String userData = user;
         String passwordData = password;
+        return userRepository.findByUser(userData);
 
 
     }
 
     @RequestMapping("/hello")
-    public String test(){
+    public String test() {
         return "somet";
     }
 
