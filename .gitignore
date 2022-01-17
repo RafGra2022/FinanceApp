@@ -1,0 +1,16 @@
+### Various ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.DS_Store
+
+### IntelliJ IDEA ###
+out/
+.idea/
+*.iws
+*.iml
+*.ipr
+.attach_pid*
