@@ -1,6 +1,9 @@
 package main.entities;
 
-import org.hibernate.annotations.GenericGenerator;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+
 
 import javax.persistence.Column;
 
@@ -13,6 +16,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "users")
+@Data
 public class User {
 
 
@@ -32,29 +36,11 @@ public class User {
 
     }
 
-    public int getId() {
-        return id;
+    public User(String user,String password){
+        this.user=user;
+        this.password=password;
+
     }
 
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    @Override
-    public String toString() {
-        return "User [user=" + user + ", password=" + password + "]";
-    }
 }
 
