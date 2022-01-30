@@ -1,4 +1,10 @@
 package main.entities;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+
+
 import javax.persistence.Column;
 
 import javax.persistence.Entity;
@@ -9,40 +15,32 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="users")
+@Table(name = "users")
+@Data
 public class User {
 
+
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name="user")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "id")
+    private int id;
+
+    @Column(name = "username")
     private String user;
 
-    @Column(name="password")
+    @Column(name = "password")
     private String password;
 
-    public User() {
+
+    protected User() {
 
     }
 
-    public String getUser() {
-        return user;
+    public User(String user,String password){
+        this.user=user;
+        this.password=password;
+
     }
 
-    public void setId(String user) {
-        this.user = user;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setFirstName(String password) {
-        this.password = password;
-    }
-
-    @Override
-    public String toString() {
-        return "User [user=" + user + ", password=" + password  + "]";
-    }
 }
 

@@ -1,9 +1,8 @@
 main\util\WebConfig.class
-main\controller\Service.class
+main\services\UserValidation.class
 main\entities\User.class
-main\model\register\UserData.class
+main\controller\UserController.class
 main\util\WebInit.class
 main\util\PersistenceJpaConfig.class
-main\services\UserService.class
-main\services\UserServiceImpl.class
+main\model\login\UserDTO.class
 main\repositories\UserRepository.class
