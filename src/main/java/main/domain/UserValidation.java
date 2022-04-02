@@ -1,9 +1,9 @@
-package main.services;
+package main.domain;
 
 import lombok.RequiredArgsConstructor;
-import main.entities.User;
-import main.model.login.UserDTO;
-import main.repositories.UserRepository;
+import main.repository.model.User;
+import main.domain.UserDTO;
+import main.repository.UserRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;

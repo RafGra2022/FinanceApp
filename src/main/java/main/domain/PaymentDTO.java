@@ -1,4 +1,4 @@
-package main.model.payment;
+package main.domain;
 
 import lombok.Getter;
 

@@ -1,21 +1,21 @@
-package main.services;
+package main.domain;
 
 import lombok.RequiredArgsConstructor;
-import main.entities.Payments;
-import main.model.payment.PaymentDTO;
-import main.repositories.PaymentsRepository;
+import main.repository.model.Payments;
+import main.domain.PaymentDTO;
+import main.repository.PaymentsRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class PaymentsSystem {
+public class PaymentsService {
 
     private final PaymentsRepository paymentsRepository;
 
-    public ResponseEntity paymentRecord(PaymentDTO paymentDTO){
-        Payments payments= new Payments();
+    public ResponseEntity paymentRecord(PaymentDTO paymentDTO) {
+        Payments payments = new Payments();
         payments.setUser(paymentDTO.get_user());
         payments.setPaymentType(paymentDTO.get_paymentType());
         payments.setFromDate(paymentDTO.get_from());

@@ -1,4 +1,4 @@
-package main.util;
+package main.config;
 
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ import java.util.Properties;
 @Configuration
 @EnableTransactionManagement
 @PropertySource("classpath:database.properties")
-@EnableJpaRepositories("main.repositories")
+@EnableJpaRepositories("main.repository")
 public class PersistenceJpaConfig {
 
     @Autowired

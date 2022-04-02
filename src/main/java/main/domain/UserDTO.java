@@ -1,4 +1,4 @@
-package main.model.login;
+package main.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
