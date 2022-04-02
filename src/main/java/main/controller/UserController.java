@@ -24,8 +24,8 @@ public class UserController {
     }
 
     @PostMapping("/payments")
-    public ResponseEntity paymentRecord(@RequestBody PaymentDTO paymentDTO) {
-        return paymentsSystem.paymentRecord(paymentDTO);
+    public ResponseEntity paymentRecord(@RequestBody PaymentRequest paymentRequest) {
+        return paymentsSystem.paymentRecord(PaymentMapper.toPaymentDTO(paymentRequest));
     }
 
     @GetMapping(value = "/login")

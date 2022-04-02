@@ -1,17 +1,21 @@
 package main.domain;
 
+import lombok.Builder;
 import lombok.Getter;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.Date;
 
+@Builder
 @Getter
 public class PaymentDTO {
 
-    private String _user;
-    private String _paymentType;
-    private Date _from;
-    private Date _to;
-    private Date _term;
-    private float _sum;
+    private String user;
+    private String paymentType;
+    private LocalDateTime from;
+    private LocalDateTime to;
+    private LocalDateTime term;
+    private BigDecimal sum;
 
 }

@@ -2,6 +2,7 @@ package main.repository.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 
@@ -17,13 +18,12 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "users")
 @Data
+@NoArgsConstructor
 public class User {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id")
-    private int id;
+    private Long id;
 
     @Column(name = "username")
     private String user;
@@ -31,10 +31,9 @@ public class User {
     @Column(name = "password")
     private String password;
 
-
-    protected User() {
-
-    }
+//    protected User() {
+//
+//    }
 
     public User(String user,String password){
         this.user=user;

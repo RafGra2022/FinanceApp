@@ -8,7 +8,7 @@ import java.util.List;
 
 
 @Repository("userRepository")
-public interface UserRepository extends JpaRepository<User, Integer> {
+public interface UserRepository extends JpaRepository<User, Long> {
 
     List<User> findByUser(String user);
     List<User> findByPassword(String password);
