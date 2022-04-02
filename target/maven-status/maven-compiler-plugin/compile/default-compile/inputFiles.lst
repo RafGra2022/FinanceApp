@@ -1,8 +1,12 @@
+C:\Users\rafal\IdeaProjects\FinanceApplication\src\main\java\main\entities\Payments.java
+C:\Users\rafal\IdeaProjects\FinanceApplication\src\main\java\main\services\PaymentsSystem.java
 C:\Users\rafal\IdeaProjects\FinanceApplication\src\main\java\main\util\WebConfig.java
 C:\Users\rafal\IdeaProjects\FinanceApplication\src\main\java\main\model\login\UserDTO.java
+C:\Users\rafal\IdeaProjects\FinanceApplication\src\main\java\main\model\payment\PaymentDTO.java
 C:\Users\rafal\IdeaProjects\FinanceApplication\src\main\java\main\services\UserValidation.java
 C:\Users\rafal\IdeaProjects\FinanceApplication\src\main\java\main\util\WebInit.java
 C:\Users\rafal\IdeaProjects\FinanceApplication\src\main\java\main\repositories\UserRepository.java
 C:\Users\rafal\IdeaProjects\FinanceApplication\src\main\java\main\controller\UserController.java
 C:\Users\rafal\IdeaProjects\FinanceApplication\src\main\java\main\entities\User.java
 C:\Users\rafal\IdeaProjects\FinanceApplication\src\main\java\main\util\PersistenceJpaConfig.java
+C:\Users\rafal\IdeaProjects\FinanceApplication\src\main\java\main\repositories\PaymentsRepository.java
