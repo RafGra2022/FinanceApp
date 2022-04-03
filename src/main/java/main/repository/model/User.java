@@ -31,9 +31,6 @@ public class User {
     @Column(name = "password")
     private String password;
 
-//    protected User() {
-//
-//    }
 
     public User(String user,String password){
         this.user=user;

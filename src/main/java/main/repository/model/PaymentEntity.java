@@ -4,8 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "payments")
@@ -21,21 +20,12 @@ public class PaymentEntity {
 
     private String paymentType;
 
-    private LocalDateTime fromDate;
+    private LocalDate fromDate;
 
-    private LocalDateTime toDate;
+    private LocalDate toDate;
 
-    private LocalDateTime term;
+    private LocalDate term;
 
     private BigDecimal sum;
 
-//    public Payment(String user, Date from, Date to, Date term, Float sum){
-//        this.user=user;
-//        this.payment=payment;
-//        this.from=from;
-//        this.to=to;
-//        this.term=term;
-//        this.sum=sum;
-//    }
-//    protected Payment(){}
 }

@@ -2,6 +2,7 @@ package main.controller;
 
 import main.domain.PaymentDTO;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -16,8 +17,8 @@ public class PaymentMapper {
                 .term(dateConverter(paymentRequest.get_term()))
                 .sum(paymentRequest.get_sum()).build();
     }
-    private static LocalDateTime dateConverter(Date dateToConvert) {
+    private static LocalDate dateConverter(Date dateToConvert) {
         return new java.sql.Timestamp(
-                dateToConvert.getTime()).toLocalDateTime();}
+                dateToConvert.getTime()).toLocalDateTime().toLocalDate();}
 
 }

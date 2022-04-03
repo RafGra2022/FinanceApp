@@ -2,6 +2,8 @@ main\config\PersistenceJpaConfig.class
 main\domain\PaymentDTO$PaymentDTOBuilder.class
 main\controller\PaymentMapper.class
 main\domain\UserDTO.class
+main\repository\VisitsRepository.class
+main\domain\Init.class
 main\domain\PaymentDTO.class
 main\repository\model\PaymentEntity.class
 main\repository\PaymentsRepository.class
@@ -9,6 +11,8 @@ main\repository\model\User.class
 main\domain\PaymentsService.class
 main\repository\UserRepository.class
 main\config\WebInit.class
+main\repository\model\VisitsEntity.class
+main\domain\PaymentsMapper.class
 main\config\WebConfig.class
 main\controller\UserController.class
 main\controller\PaymentRequest.class

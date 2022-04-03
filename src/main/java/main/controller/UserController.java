@@ -1,14 +1,13 @@
 package main.controller;
 
 import lombok.RequiredArgsConstructor;
-import main.domain.UserDTO;
-import main.domain.PaymentDTO;
 import main.domain.PaymentsService;
+import main.domain.UserDTO;
+import main.domain.PaymentsMapper;
 import main.domain.UserValidation;
-import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
@@ -16,7 +15,8 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     private final UserValidation userValidation;
-    private final PaymentsService paymentsSystem;
+    private final PaymentsMapper paymentsSystem;
+    private final PaymentsService paymentsService;
 
     @PostMapping("/register")
     public ResponseEntity register(@RequestBody UserDTO userDTO) {
@@ -25,11 +25,17 @@ public class UserController {
 
     @PostMapping("/payments")
     public ResponseEntity paymentRecord(@RequestBody PaymentRequest paymentRequest) {
-        return paymentsSystem.paymentRecord(PaymentMapper.toPaymentDTO(paymentRequest));
+        paymentsSystem.paymentRecord(PaymentMapper.toPaymentDTO(paymentRequest));
+        return new ResponseEntity(HttpStatus.OK);
     }
 
     @GetMapping(value = "/login")
-    public ResponseEntity login(@RequestHeader HttpHeaders headers, @RequestParam String user, String password) {
+    public ResponseEntity login(@RequestParam String user, String password) {
         return userValidation.loginValidate(user, password);
+    }
+    @GetMapping(value = "/run")
+    public void test(){
+        this.paymentsService.updateExpired();
+
     }
 }
