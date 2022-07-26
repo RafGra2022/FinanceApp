@@ -15,5 +15,6 @@ main\repository\model\VisitsEntity.class
 main\domain\PaymentsMapper.class
 main\config\WebConfig.class
 main\controller\UserController.class
+main\domain\Visits.class
 main\controller\PaymentRequest.class
 main\domain\UserValidation.class

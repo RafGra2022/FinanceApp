@@ -6,7 +6,6 @@
         <exploded>true</exploded>
         <module>FinanceApplication</module>
         <packaging>war</packaging>
-        <unpackNestedArchives>false</unpackNestedArchives>
       </options>
     </properties>
     <root id="root">
@@ -66,7 +65,7 @@
           <element id="library" level="project" name="Maven: commons-collections:commons-collections:3.1" />
           <element id="library" level="project" name="Maven: commons-lang:commons-lang:2.1" />
           <element id="library" level="project" name="Maven: oro:oro:2.0.8" />
-          <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.22" />
+          <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.24" />
           <element id="library" level="project" name="Maven: javax.annotation:jsr250-api:1.0" />
         </element>
       </element>
