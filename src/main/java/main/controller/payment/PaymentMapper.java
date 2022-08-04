@@ -1,14 +1,14 @@
 package main.controller.payment;
 
-import main.domain.payment.PaymentDTO;
+import main.domain.payment.PaymentDto;
 
 import java.time.LocalDate;
 import java.util.Date;
 
 public class PaymentMapper {
 
-    public static PaymentDTO toPaymentDTO(PaymentRequest paymentRequest) {
-        return PaymentDTO.builder()
+    public static PaymentDto toPaymentDTO(PaymentRequest paymentRequest) {
+        return PaymentDto.builder()
                 .user(paymentRequest.get_user())
                 .paymentType(paymentRequest.get_paymentType())
                 .from(dateConverter(paymentRequest.get_from()))
