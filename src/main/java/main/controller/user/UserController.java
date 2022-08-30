@@ -1,8 +1,8 @@
 package main.controller.user;
 
 import lombok.RequiredArgsConstructor;
-import main.domain.user.UserDTO;
-import main.domain.user.UserValidation;
+import main.domain.user.UserDto;
+import main.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,16 +11,16 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class UserController {
 
-    private final UserValidation userValidation;
+    private final UserService userService;
 
     @PostMapping("/register")
-    public ResponseEntity register(@RequestBody UserDTO userDTO) {
-        return userValidation.registerValidate(userDTO);
+    public ResponseEntity register(@RequestBody UserDto userDTO) {
+        return userService.addUser(userDTO);
     }
 
     @GetMapping(value = "/login")
     public ResponseEntity login(@RequestParam String user, String password) {
-        return userValidation.loginValidate(user, password);
+        return userService.validateUser(user, password);
     }
 //    @GetMapping(value = "/run")
 //    public void test(){

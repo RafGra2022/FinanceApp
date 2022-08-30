@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import java.time.LocalDate;
 import java.util.List;
 
-@Repository("paymentsRepository")
+
 public interface PaymentsRepository extends JpaRepository<PaymentEntity,Long>, PaymentsCustomRepository {
 
     List<PaymentEntity> findByUser(String user);

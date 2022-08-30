@@ -16,7 +16,6 @@ public class PaymentMapper {
         payments.setTerm(paymentDTO.getTerm());
         payments.setSum(paymentDTO.getSum());
         return payments;
-//        this.paymentsRepository.save(payments);
     }
 
 

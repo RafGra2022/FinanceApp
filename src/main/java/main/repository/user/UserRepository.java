@@ -4,12 +4,14 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 
-@Repository("userRepository")
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<UserEntity, Long> {
 
-    List<User> findByUser(String user);
-    List<User> findByPassword(String password);
+    List<UserEntity> findByUser(String user);
+    List<UserEntity> findByPassword(String password);
+    Optional<UserEntity> findByUserAndPassword(String username, String password);
+
 
 }
