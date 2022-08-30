@@ -24,11 +24,4 @@ public class PaymentController {
         return new ResponseEntity(HttpStatus.OK);
     }
 
-    @GetMapping(value = "/userPayments")
-    public String getPayments() throws JsonProcessingException {
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.registerModule(new JavaTimeModule());
-        String json = mapper.writeValueAsString(this.paymentsService.getPayments());
-        return json;
-    }
 }
